@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Inter&family=League+Spartan:wght@100;200;300;400&family=Nerko+One&family=Playfair+Display&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box; outline: none;
+    border: none; text-decoration: none;  
+    list-style: none;
+   
+}
+:root {
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+  }
+  
+body{
+    background: var(--Magnolia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container{
+    background-color: var(--White);
+    border-radius: 20px;
+}
+#sidebar {
+    background-image: url("images/bg-sidebar-desktop.svg");
+    background-position: fixed;
+    background-repeat: no-repeat;
+    height: calc(100vh - 1.6rem);
+    width: 280px;
+    position: absolute;
+    margin: 0.8rem;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  .sidebar-menu li a {
+    padding: 8px 8px 10px 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #4D5760;
+    display: block;
+    transition: 0.3s;
+    font-weight: bolder;
+  }
+  .filter-btn {
+    border: 1px solid var(--Magnolia); 
+    border-radius: 20px; 
+    color: white; 
+    background-color: transparent; 
+    padding: 8px 12px; 
+   
+  }
+  
+  /* .filter-btn:hover {
+    background-color: var(--Magnolia);
+    color: black; 
+  } */
+  .filter-btn.active{
+    background-color: var(--Magnolia);
+    color: #000;
+  }
+
+.sidebar-menu li a{
+    display: flex;
+    margin-top: 15px;
+}
+.steps{
+    margin-left: 12px;
+}
+.steps p{
+    font-size: .7rem;
+    color: var(--Cool-gray);
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+.steps h4{
+    color: white;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+main{
+    margin-left: 350px;
+    margin-top: 5px;
+    padding: 2rem 5rem 2rem 1.5rem;
+    /* height: 80vh; */
+    
+}
+main .mini-nav-bar{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* form */
+.form-header h2{
+    color: var(--marine-blue);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.form-header p{
+    font-size: .9rem;
+    color: var(--Cool-gray);
+    margin-bottom: 35px;
+}
+form {
+  margin-top: 35px;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  margin-top: 25px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+.form-row .required{
+    margin-top: 25px;
+}
+.phone-error{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#phone-error-msg{
+    color: red !important;
+    font-size: .8rem;
+    margin-bottom: -20px;
+}
+
+  /* .form-row.required input:invalid {
+    border: 2px solid red;
+  } */
+
+.common-btns.form1-btns{
+    justify-content: flex-end;
+}
+.common-btns{
+  display: flex;
+  justify-content: space-between;
+  transition: 0.5s ease;
+}
+
+.common-btns .next-btn, .common-btns .submit-btn{
+  background-color: var(--marine-blue);
+  color: white;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 110px;
+}
+
+.common-btns .next-btn:hover,.common-btns .submit-btn:hover{
+   padding: 12px 23px;
+   opacity: 0.9;
+}
+
+.prev-btn{
+    background: transparent;
+    color: var(--Cool-gray);
+    cursor: pointer;
+    margin-top: 110px;
+  }
+  
+  .prev-btn:hover{
+    font-weight: bolder; 
+    color: var(--marine-blue);
+  }
+  
+
+  /* STEP 2 BEGINS */
+.cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    flex-basis: calc(33.33% - 10px);
+    background: transparent;
+    padding: 22px;
+    text-align: center;
+    border: 1px solid var(--Light-gray);
+    border-radius: 8px;
+    margin-top: 35px; /*check this if form 2 is lookin wierd later */
+    padding: 1.1rem .8rem;
+    text-align: left;
+}
+.card:hover{
+    border: 2px solid var(--marine-blue);
+    transition: 0.3s linear;
+} 
+.card.active{
+    background-color: var(--Magnolia);
+}
+.card img{
+    margin-bottom: 30px;
+}
+.card h4{
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--marine-blue);
+}
+.card p{
+    font-size: .8rem;
+    margin-bottom: 5px;
+    color: var(--Cool-gray);
+}
+.card h6{
+    font-size: .6rem;
+    color: var(--marine-blue);
+    
+}
+.toggle-center{
+    background-color: var(--Magnolia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: .5rem 0;
+    font-size: .7rem;
+  }
+
+.toggle-center {
+    display: flex;
+    align-items: center;
+}
+
+.toggle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: var(--marine-blue);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.toggle:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked + .toggle:before {
+    transform: translateX(20px);
+}
+
+.monthly, .yearly{
+    /* color: #888; */
+    transition: color 0.2s ease-in-out;
+}
+.monthly{
+    color: var(--marine-blue);
+}
+.yearly{ 
+    color: #888;
+}
+/* .checkbox:checked ~ .monthly{
+    color: var(--marine-blue);
+} */
+
+  /* STEP 2 ENDS */
+
+  
+  /* STEP 3 BEGINS */
+.form3 .form-header p{
+    margin-bottom: 30px;
+}
+.box-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem;
+    border: 1px solid var(--marine-blue);
+    margin-bottom: 15px;
+    border-radius: 7px;
+    gap: 4rem;
+}
+
+.desc-mth{
+    color: var(--purplish-blue);
+}
+.box-a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+.input[type="checkbox"]{
+    color: var(--pastel-blue);
+}
+.box-b{
+    align-items: center;
+}
+.box-b h4{
+    color: var(--marine-blue);
+    font-weight: .8rem;
+    margin-bottom: 4px;
+}
+.box-b p{
+    color: var(--Cool-gray);
+    font-size: .8rem;
+}
+p.desc-mth{
+    font-size: .9rem;
+}
+.box:hover{
+    background-color: var(--Magnolia);
+}
+.box.active{
+    background-color: var(--Magnolia);
+}
+  /* STEP 3 ENDS */
+
+
+/* STEP 4 BEGINS */
+.box-wrapper.bg-blue{
+    background-color: var(--Magnolia);
+}
+.box-b .changeToMonthly, .box-b .changeToYearly{
+    color: var(--purplish-blue);
+    cursor: pointer;
+}
+.box-b .changeToMonthly:hover, .box-b .changeToYearly:hover{
+    text-decoration: underline;
+}
+.form4 .box-wrapper .box{
+    border: none;
+    margin: 0;
+}
+.form4b .box-wrapper .box{
+    border: none;
+    margin: 0;
+}
+.common-btns.form4-btns{
+    padding-bottom: 42px;
+}
+
+.box-inner h4{
+    padding-bottom: 18px;
+}
+.box-inner .gray{
+    color: var(--Cool-gray);
+    font-weight: 300;
+    font-size: .8rem;
+}
+.box-inner .price{
+    color: var(--marine-blue);
+    font-weight: 500;
+    font-size: .9rem;
+}
+.box-inner .pad{
+    padding-bottom: 18px;
+}
+
+.box .month{
+    color: var(--marine-blue);
+    font-weight: 700;
+}
+.box-wrapper .line{
+    width: 90%;
+    height: 1px;
+    background-color: var(--Light-gray);
+    margin: 5px 1rem 5px 1rem;
+}
+.form4 .box-total, .form4b .box-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1.7rem .9rem;
+}
+.box-total .gray{
+    color: var(--Cool-gray);
+    font-size: .8rem;
+    margin-left: 5px;
+}
+.box-total .blue{
+    font-size: 1.2rem;
+    color: var(--purplish-blue);
+    font-weight: bolder;
+    margin-right: 5px;
+}
+.form4-btns .submit-btn{
+    background-color: var(--purplish-blue);
+    cursor: pointer;
+}
+.form4-btns .submit-btn:hover{
+    opacity: 0.8;
+}
+.form2, .form3, .form4, .form4b{
+    display:  none;
+}
+/* .form2{
+    display: none;
+} */
+.form2-btns, .form3-btns, .form4-btns, .form4b-btns{
+    display:  none;
+}
+.form1, .form2, .form3, .form2b, .form5{
+    height: 58vh;
+}
+.form4b, .form4{
+    height: 52vh;
+}
+
+/* STEP 4 ENDSSS */
+
+
+/* FINAL FORM 5 BEGINS */
+
+.form5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    display: none;
+}
+.thanks-center{
+    text-align: center;
+}
+.thanks-center img{
+    width: 60px;
+}
+.thanks-center h2{
+    font-size: 1.6rem;
+    color: var(--marine-blue);
+    margin: 15px 0 10px 0;
+}
+.thanks-center p{
+    line-height: 22px;
+    color: var(--Cool-gray);
+    font-size: .9rem;
+}
+ 
+/* FINAL FORM 5 ENDS */

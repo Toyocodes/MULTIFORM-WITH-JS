@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .toggle {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.checkbox:checked + .toggle:before {
+  transform: translateX(20px);
+}
+.checkbox{
+    display: none;
+}
+</style>
+
+<body>
+    <div class="toggle-center">
+        <h3 class="monthly"></h3>
+        <input type="checkbox" id="switch" class="checkbox" />
+        <label for="switch" class="toggle"></label>
+        <h3 class="yearly"></h3>
+      </div>
+      
+      <div id="price-plan-monthly" class="price-plan">
+        <!-- Monthly Price Plan Content -->
+        <h2>Monthly Price Plan</h2>
+        <p>$10 per month</p>
+      </div>
+      
+      <div id="price-plan-yearly" class="price-plan" style="display: none;">
+        <!-- Yearly Price Plan Content -->
+        <h2>Yearly Price Plan</h2>
+        <p>$100 per year</p>
+      </div>
+      
+      <script>
+        const switchCheckbox = document.getElementById('switch');
+        const pricePlanMonthly = document.getElementById('price-plan-monthly');
+        const pricePlanYearly = document.getElementById('price-plan-yearly');
+      
+        switchCheckbox.addEventListener('change', function() {
+          if (this.checked) {
+            pricePlanMonthly.style.display = 'none';
+            pricePlanYearly.style.display = 'block';
+          } else {
+            pricePlanMonthly.style.display = 'block';
+            pricePlanYearly.style.display = 'none';
+          }
+        });
+      </script>
+      
+</body>
+</html>
